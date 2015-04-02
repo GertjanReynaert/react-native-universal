@@ -10,24 +10,48 @@ var {
   StyleSheet,
   Text,
   View,
+  Image,
   ListView
 } = React;
 
 var reactNativeTest = React.createClass({
   getInitialState: () => {
-    var ds = new ListView.DataSource({
-      rowHasChanged: (r1, r2) => { return r1 !== r2; }
-    });
-
     return {
-      dataSource: ds.cloneWithRows(['test1', 'test2'])
+      dataSource: new ListView.DataSource({
+        rowHasChanged: (r1, r2) => { return r1 !== r2; }
+      }),
+      contacts: []
     };
+  },
+
+  componentWillMount: function() {
+    for(var i = 0; i < 25; i++) {
+      fetch('http://uifaces.com/api/v1/random')
+      .then((response) => response.text())
+      .then((response) => {
+        response = JSON.parse(response);
+        var contacts = this.state.contacts;
+        contacts.push(response);
+        this.setState({
+          contacts: contacts,
+          dataSource: this.getDataSource(contacts)
+        });
+      })
+      .catch((error) => {
+        console.warn(error);
+      });
+    }
+  },
+
+  getDataSource: function(contacts) {
+    return this.state.dataSource.cloneWithRows(contacts);
   },
 
   renderRow: (rowdata) => {
     return (
       <View style={styles.row}>
-        <Text>{ rowdata }</Text>
+        <Image style={styles.image} source={{uri: rowdata.image_urls.normal}} />
+        <Text style={styles.text}>{rowdata.username}</Text>
       </View>
     );
   },
@@ -42,10 +66,18 @@ var styles = StyleSheet.create({
     paddingTop: 30,
   },
   row: {
+    flexDirection: "row",
+    alignItems: "center",
     backgroundColor: '#FFFFFF',
     padding: 10,
     borderBottomWidth: 1,
     borderColor: '#DDDDDD'
+  },
+  image: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    marginRight: 10
   }
 });
 
