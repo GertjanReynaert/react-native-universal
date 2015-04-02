@@ -1,7 +1,7 @@
 'use strict';
 
 var React = require('react-native');
-var ListViewCell = require('./ListViewCell');
+var Contact = require('./ListViewCell');
 var {
   AppRegistry,
   StyleSheet,
@@ -42,7 +42,7 @@ var reactNativeTest = React.createClass({
   },
 
   renderRow: (rowdata) => {
-    return <ListViewCell name={rowdata.username} src={rowdata.image_urls.normal}/>;
+    return <Contact contact={rowdata}/>;
   },
 
   render: function() {

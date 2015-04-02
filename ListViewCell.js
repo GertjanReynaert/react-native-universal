@@ -11,8 +11,8 @@ var {
 var ListViewCell = React.createClass({
   getInitialState: function() {
     return {
-      username: this.props.name || "John Doe",
-      url: this.props.src || "http://heintendsvictory.org/wp-content/uploads/default-avatar.png"
+      username: this.props.contact.username,
+      url: this.props.contact.image_urls.normal
     };
   },
 
