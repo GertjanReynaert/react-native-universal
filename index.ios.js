@@ -1,16 +1,10 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- */
 'use strict';
 
 var React = require('react-native');
+var ListViewCell = require('./ListViewCell');
 var {
   AppRegistry,
   StyleSheet,
-  Text,
-  View,
-  Image,
   ListView
 } = React;
 
@@ -48,12 +42,7 @@ var reactNativeTest = React.createClass({
   },
 
   renderRow: (rowdata) => {
-    return (
-      <View style={styles.row}>
-        <Image style={styles.image} source={{uri: rowdata.image_urls.normal}} />
-        <Text style={styles.text}>{rowdata.username}</Text>
-      </View>
-    );
+    return <ListViewCell name={rowdata.username} src={rowdata.image_urls.normal}/>;
   },
 
   render: function() {
