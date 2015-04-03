@@ -7,5 +7,8 @@
   },
   "dependencies": {
     "react-native": "^0.3.1"
+  },
+  "devDependencies": {
+    "faker": "^2.1.2"
   }
 }

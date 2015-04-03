@@ -6,22 +6,25 @@ var {
   Text,
   View,
   Image,
+  TouchableHighlight,
 } = React;
 
 var ListViewCell = React.createClass({
   getInitialState: function() {
     return {
-      username: this.props.contact.username,
-      url: this.props.contact.image_urls.normal
+      username: this.props.contact.fullName(),
+      url: this.props.contact.avatar
     };
   },
 
   render: function() {
     return (
-      <View style={styles.row}>
-        <Image style={styles.image} source={{uri: this.state.url}} />
-        <Text style={styles.text}>{ this.state.username }</Text>
-      </View>
+      <TouchableHighlight onPress={this.doSomething}>
+        <View style={styles.row}>
+          <Image style={styles.image} source={{uri: this.state.url}} />
+          <Text style={styles.text}>{ this.state.username }</Text>
+        </View>
+      </TouchableHighlight>
     );
   }
 });

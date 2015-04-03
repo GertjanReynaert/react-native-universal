@@ -1,10 +1,13 @@
 'use strict';
 
 var React = require('react-native');
-var Contact = require('./ListViewCell');
+var Contact = require('./models/contact');
+var ListViewCell = require('./ListViewCell');
 var {
   AppRegistry,
   StyleSheet,
+  View,
+  Text,
   ListView
 } = React;
 
@@ -19,20 +22,12 @@ var reactNativeTest = React.createClass({
   },
 
   componentWillMount: function() {
-    for(var i = 0; i < 25; i++) {
-      fetch('http://uifaces.com/api/v1/random')
-      .then((response) => response.text())
-      .then((response) => {
-        response = JSON.parse(response);
-        var contacts = this.state.contacts;
-        contacts.push(response);
-        this.setState({
-          contacts: contacts,
-          dataSource: this.getDataSource(contacts)
-        });
-      })
-      .catch((error) => {
-        console.warn(error);
+    for(var i = 0; i < 100; i++) {
+      var contacts = this.state.contacts;
+      contacts.push(new Contact);
+      this.setState({
+        contacts: contacts,
+        dataSource: this.getDataSource(contacts)
       });
     }
   },
@@ -41,12 +36,20 @@ var reactNativeTest = React.createClass({
     return this.state.dataSource.cloneWithRows(contacts);
   },
 
-  renderRow: (rowdata) => {
-    return <Contact contact={rowdata}/>;
+  renderRow: function(rowdata) {
+    return <ListViewCell contact={rowdata}/>;
+  },
+
+  renderSectionHeader: function() {
+    return (
+      <View style={styles.row}>
+        <Text>Section Header</Text>
+      </View>
+    );
   },
 
   render: function() {
-    return <ListView style={styles.listview} dataSource={this.state.dataSource} renderRow={this.renderRow}>Test</ListView>;
+    return <ListView style={styles.listview} dataSource={this.state.dataSource} renderRow={this.renderRow} renderSectionHeader={this.renderSectionHeader}/>;
   }
 });
 
