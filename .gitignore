@@ -1,0 +1,14 @@
+!.keep
+*.DS_Store
+*.swo
+*.swp
+*.rdb
+/.env
+/log/*
+/tags
+*/tmp/*
+/dist
+/dist
+/build
+node_modules
+npm-debug.log
