@@ -19,9 +19,7 @@ var MasterDetail = React.createClass({
   },
 
   setSelected: function(contact) {
-    this.setState({
-      selected: contact
-    });
+    this.setState({ selected: contact });
   },
 
   render: function() {
@@ -31,26 +29,38 @@ var MasterDetail = React.createClass({
           <ContactList contacts={this.state.list} setContact={this.setSelected}/>
         </View>
         <View style={styles.detail}>
-          <View style={styles.item}>
-            <Image style={styles.image} source={{uri: this.state.selected.avatar}} />
-            <Text style={styles.text}>{ this.state.selected.fullName }</Text>
-          </View>
-          <View style={styles.item}>
-            <View style={styles.row}>
-              <Text>{ this.state.selected.address }</Text>
-            </View>
-            <View style={styles.row}>
-              <Text>{ this.state.selected.zipcode }</Text>
-              <Text>{ this.state.selected.city }</Text>
+          <View style={styles.hero}>
+            <Image style={styles.heroImage} source={{uri: this.state.selected.avatar}} />
+            <View style={styles.heroTextBox}>
+              <Text style={styles.text}>{ this.state.selected.fullName }</Text>
+              <Text style={styles.heroText}>{ this.state.selected.company }</Text>
             </View>
           </View>
           <View style={styles.item}>
+            <Text style={styles.label}>Phone</Text>
             <Text>{ this.state.selected.phone }</Text>
+          </View>
+          <View style={styles.item}>
+            <Text style={styles.label}>Work</Text>
             <Text>{ this.state.selected.cellphone }</Text>
           </View>
           <View style={styles.item}>
+            <Text style={styles.label}>Private</Text>
             <Text>{ this.state.selected.email }</Text>
+          </View>
+          <View style={styles.item}>
+            <Text style={styles.label}>Work</Text>
             <Text>{ this.state.selected.emailWork }</Text>
+          </View>
+          <View style={styles.item}>
+            <Text style={styles.label}>Home</Text>
+            <Text>{ this.state.selected.address }</Text>
+            <Text>{ this.state.selected.zipcode } { this.state.selected.city }</Text>
+            <Text>{ this.state.selected.country }</Text>
+          </View>
+          <View style={styles.item}>
+            <Text style={styles.label}>Birthday</Text>
+            <Text>{ this.state.selected.birthday }</Text>
           </View>
         </View>
       </View>
@@ -70,20 +80,32 @@ var styles = StyleSheet.create({
     backgroundColor: "#FFFFFF",
     padding: 20
   },
-  item: {
+  hero: {
     flexDirection: "row",
     alignItems: "center",
+  },
+  heroImage: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    marginRight: 10
+  },
+  heroTextBox: {
+    flexDirection: "column"
+  },
+  heroText: {
+    color: "#888888"
+  },
+  item: {
     marginTop: 10,
     padding: 10,
-    backgroundColor: "#EEEEEE",
-    borderRadius: 2
+    borderBottomWidth: 1,
+    borderColor: "#DDDDDD",
   },
-  image: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    marginRight: 10
-  }
+  label: {
+    color: "blue",
+    marginBottom: 5
+  },
 });
 
 module.exports = MasterDetail;
