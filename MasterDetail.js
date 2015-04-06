@@ -103,7 +103,7 @@ var styles = StyleSheet.create({
     borderColor: "#DDDDDD",
   },
   label: {
-    color: "blue",
+    color: "#007AFF",
     marginBottom: 5
   },
 });
