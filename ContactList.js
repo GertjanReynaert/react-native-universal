@@ -70,20 +70,6 @@ var ContactList = React.createClass({
 var styles = StyleSheet.create({
   listview: {
     paddingTop: 30,
-  },
-  row: {
-    flexDirection: "row",
-    alignItems: "center",
-    backgroundColor: '#FFFFFF',
-    padding: 10,
-    borderBottomWidth: 1,
-    borderColor: '#DDDDDD'
-  },
-  image: {
-    width: 40,
-    height: 40,
-    borderRadius: 20,
-    marginRight: 10
   }
 });
 
