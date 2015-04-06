@@ -9,51 +9,48 @@ var {
 } = React;
 
 var ContactList = React.createClass({
-  getInitialState: function() {
-    var getSectionData = (dataBlob, sectionID) => {
-      return dataBlob[sectionID].name;
+    getInitialState: function() {
+    var getSectionData = (data, sectionID) => {
+      return data[sectionID];
+    };
+    var getRowData = (data, sectionID, rowID) => {
+      return data[rowID];
     };
 
-    var getRowData = (dataBlob, sectionID, rowID) => {
-      return dataBlob[sectionID].data[rowID];
-    };
-
-    var datasource = new ListView.DataSource({
+    var dataSource = new ListView.DataSource({
       getRowData: getRowData,
       getSectionHeaderData: getSectionData,
-      rowHasChanged: (r1, r2) => r1 !== r2,
-      sectionHeaderHasChanged: (r1, r2) => r1 !== r2
+      rowHasChanged: (row1, row2) => row1 !== row2,
+      sectionHeaderHasChanged: (s1, s2) => s1 !== s2,
     });
 
-    var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
-    var data = [];
+    var data = {};
+    var sectionIDs = [];
     var rowIDs = [];
+    var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
-    for(var i = 0, len = alphabet.length; i < len; i++) {
+    for (var i = 0; i < alphabet.length; i++) {
       var filteredContacts = this.props.contacts.filter((contact) => {
         return contact.lastName.toUpperCase().indexOf(alphabet[i]) === 0;
       });
 
       if (filteredContacts.length > 0) {
-        var section = {
-          name: alphabet[i],
-          data: filteredContacts
-        };
+        var currentChar = alphabet[i];
+        var nextRowIDs = rowIDs.length;
 
-        rowIDs[rowIDs.length] = filteredContacts.map((contact) => {
-          return filteredContacts.indexOf(contact);
-        });
+        sectionIDs.push(currentChar);
+        data[currentChar] = currentChar;
+        rowIDs[nextRowIDs] = [];
 
-        data.push(section);
+        for (var j = 0; j < filteredContacts.length; j++) {
+          var rowName = `S${i}R${j}`;
+          rowIDs[nextRowIDs].push(rowName);
+          data[rowName] = filteredContacts[j];
+        }
       }
     }
-
-    var sectionIDs = data.map((section) => {
-      return data.indexOf(section);
-    });
-
     return {
-      dataSource: datasource.cloneWithRowsAndSections(data, sectionIDs, rowIDs)
+      dataSource: dataSource.cloneWithRowsAndSections(data, sectionIDs, rowIDs),
     };
   },
 
