@@ -9,7 +9,7 @@ var {
   TouchableHighlight,
 } = React;
 
-var ListViewCell = React.createClass({
+var ContactCell = React.createClass({
   getInitialState: function() {
     return {
       username: this.props.contact.fullName(),
@@ -46,4 +46,4 @@ var styles = StyleSheet.create({
   }
 });
 
-module.exports = ListViewCell;
+module.exports = ContactCell;
