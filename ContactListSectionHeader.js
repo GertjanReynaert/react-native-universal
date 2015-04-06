@@ -19,10 +19,12 @@ var ContactListSectionHeader = React.createClass({
 
 var styles = StyleSheet.create({
   sectionHeader: {
-    padding: 3,
-    backgroundColor: '#FFFFFF',
+    paddingLeft: 10,
+    padding: 5,
+    backgroundColor: '#EEEEEE',
     borderBottomWidth: 1,
-    borderColor: '#DDDDDD'
+    borderColor: '#EEEEEE',
+    fontWeight: "bold"
   },
 });
 
