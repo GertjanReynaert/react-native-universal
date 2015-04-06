@@ -12,14 +12,18 @@ var {
 var ContactCell = React.createClass({
   getInitialState: function() {
     return {
-      username: this.props.contact.fullName(),
+      username: this.props.contact.fullName,
       url: this.props.contact.avatar
     };
   },
 
+  selectContact: function() {
+    this.props.setContact(this.props.contact);
+  },
+
   render: function() {
     return (
-      <TouchableHighlight onPress={this.doSomething}>
+      <TouchableHighlight onPress={this.selectContact}>
         <View style={styles.row}>
           <Image style={styles.image} source={{uri: this.state.url}} />
           <Text style={styles.text}>{ this.state.username }</Text>

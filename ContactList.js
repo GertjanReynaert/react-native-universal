@@ -9,7 +9,7 @@ var {
 } = React;
 
 var ContactList = React.createClass({
-    getInitialState: function() {
+  getInitialState: function() {
     var getSectionData = (data, sectionID) => {
       return data[sectionID];
     };
@@ -54,8 +54,12 @@ var ContactList = React.createClass({
     };
   },
 
+  selectContact: function(contact) {
+    this.props.setContact(contact);
+  },
+
   renderRow: function(rowdata) {
-    return <ContactCell contact={rowdata}/>;
+    return <ContactCell contact={rowdata} setContact={this.selectContact}/>;
   },
 
   renderSectionHeader: function(sectionData) {
