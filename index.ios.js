@@ -2,7 +2,7 @@
 
 var React = require('react-native');
 var Contact = require('./models/contact');
-var ContactList = require('./ContactList');
+var MasterDetail = require('./MasterDetail');
 var {
   AppRegistry,
 } = React;
@@ -18,7 +18,7 @@ var reactNativeTest = React.createClass({
   },
 
   render: function() {
-    return <ContactList contacts={this.state.contacts}/>;
+    return <MasterDetail list={this.state.contacts}/>;
   }
 });
 
