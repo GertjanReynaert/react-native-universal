@@ -11,7 +11,7 @@ var ContactListSectionHeader = React.createClass({
   render: function() {
     return (
       <View style={styles.sectionHeader}>
-        <Text>{this.props.text}</Text>
+        <Text style={styles.headerText}>{this.props.text}</Text>
       </View>
     );
   }
@@ -23,9 +23,12 @@ var styles = StyleSheet.create({
     padding: 5,
     backgroundColor: '#EEEEEE',
     borderBottomWidth: 1,
-    borderColor: '#EEEEEE',
-    fontWeight: "bold"
+    borderColor: '#EEEEEE'
   },
+
+  headerText: {
+    fontWeight: "bold"
+  }
 });
 
 module.exports = ContactListSectionHeader;
