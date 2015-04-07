@@ -3,6 +3,7 @@
 var React = require('react-native');
 var {
   StyleSheet,
+  ScrollView,
   View,
   Image,
   Text
@@ -11,7 +12,7 @@ var {
 var ContactDetail = React.createClass({
   render: function() {
     return (
-      <View>
+      <ScrollView style={styles.scrollview}>
         <View style={styles.hero}>
           <Image style={styles.heroImage} source={{uri: this.props.contact.avatar}} />
           <View style={styles.heroTextBox}>
@@ -45,12 +46,15 @@ var ContactDetail = React.createClass({
           <Text style={styles.label}>Birthday</Text>
           <Text>{ this.props.contact.birthday }</Text>
         </View>
-      </View>
+      </ScrollView>
     );
   }
 });
 
 var styles = StyleSheet.create({
+  scrollview: {
+    height: 740
+  },
   hero: {
     flexDirection: "row",
     alignItems: "center",
