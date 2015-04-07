@@ -11,12 +11,12 @@ var {
 var ContactDetail = React.createClass({
   render: function() {
     return (
-      <View style={styles.detail}>
+      <View>
         <View style={styles.hero}>
           <Image style={styles.heroImage} source={{uri: this.props.contact.avatar}} />
           <View style={styles.heroTextBox}>
-            <Text style={styles.text}>{ this.props.contact.fullName }</Text>
-            <Text style={styles.heroText}>{ this.props.contact.company }</Text>
+            <Text>{ this.props.contact.fullName }</Text>
+            <Text style={styles.companyName}>{ this.props.contact.company }</Text>
           </View>
         </View>
         <View style={styles.item}>
@@ -51,17 +51,6 @@ var ContactDetail = React.createClass({
 });
 
 var styles = StyleSheet.create({
-  screen: {
-    flexDirection: "row",
-  },
-  master: {
-    width: 300
-  },
-  detail: {
-    width: 724,
-    backgroundColor: "#FFFFFF",
-    padding: 20
-  },
   hero: {
     flexDirection: "row",
     alignItems: "center",
@@ -75,7 +64,7 @@ var styles = StyleSheet.create({
   heroTextBox: {
     flexDirection: "column"
   },
-  heroText: {
+  companyName: {
     color: "#888888"
   },
   item: {

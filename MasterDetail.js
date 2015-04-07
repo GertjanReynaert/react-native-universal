@@ -34,15 +34,17 @@ var MasterDetail = React.createClass({
   }
 });
 
+var DEVICE_WIDTH = 1024;
+var MASTER_WIDTH = 350;
 var styles = StyleSheet.create({
   screen: {
     flexDirection: "row",
   },
   master: {
-    width: 300
+    width: MASTER_WIDTH
   },
   detail: {
-    width: 724,
+    width: DEVICE_WIDTH - MASTER_WIDTH,
     backgroundColor: "#FFFFFF",
     padding: 20
   }
