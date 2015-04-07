@@ -2,12 +2,10 @@
 
 var React = require('react-native');
 var ContactList = require('./ContactList');
+var ContactDetail = require('./ContactDetail');
 var {
-  AppRegistry,
   StyleSheet,
-  View,
-  Image,
-  Text
+  View
 } = React;
 
 var MasterDetail = React.createClass({
@@ -29,39 +27,7 @@ var MasterDetail = React.createClass({
           <ContactList contacts={this.state.list} setContact={this.setSelected}/>
         </View>
         <View style={styles.detail}>
-          <View style={styles.hero}>
-            <Image style={styles.heroImage} source={{uri: this.state.selected.avatar}} />
-            <View style={styles.heroTextBox}>
-              <Text style={styles.text}>{ this.state.selected.fullName }</Text>
-              <Text style={styles.heroText}>{ this.state.selected.company }</Text>
-            </View>
-          </View>
-          <View style={styles.item}>
-            <Text style={styles.label}>Phone</Text>
-            <Text>{ this.state.selected.phone }</Text>
-          </View>
-          <View style={styles.item}>
-            <Text style={styles.label}>Work</Text>
-            <Text>{ this.state.selected.cellphone }</Text>
-          </View>
-          <View style={styles.item}>
-            <Text style={styles.label}>Private</Text>
-            <Text>{ this.state.selected.email }</Text>
-          </View>
-          <View style={styles.item}>
-            <Text style={styles.label}>Work</Text>
-            <Text>{ this.state.selected.emailWork }</Text>
-          </View>
-          <View style={styles.item}>
-            <Text style={styles.label}>Home</Text>
-            <Text>{ this.state.selected.address }</Text>
-            <Text>{ this.state.selected.zipcode } { this.state.selected.city }</Text>
-            <Text>{ this.state.selected.country }</Text>
-          </View>
-          <View style={styles.item}>
-            <Text style={styles.label}>Birthday</Text>
-            <Text>{ this.state.selected.birthday }</Text>
-          </View>
+          <ContactDetail contact={this.state.selected}/>
         </View>
       </View>
     );
@@ -79,33 +45,7 @@ var styles = StyleSheet.create({
     width: 724,
     backgroundColor: "#FFFFFF",
     padding: 20
-  },
-  hero: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  heroImage: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
-    marginRight: 10
-  },
-  heroTextBox: {
-    flexDirection: "column"
-  },
-  heroText: {
-    color: "#888888"
-  },
-  item: {
-    marginTop: 10,
-    padding: 10,
-    borderBottomWidth: 1,
-    borderColor: "#DDDDDD",
-  },
-  label: {
-    color: "#007AFF",
-    marginBottom: 5
-  },
+  }
 });
 
 module.exports = MasterDetail;
