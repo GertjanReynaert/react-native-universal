@@ -54,8 +54,12 @@ var ContactList = React.createClass({
     };
   },
 
+  setContact: function(contact) {
+    this.props.setContact(contact, this.props.navigator);
+  },
+
   renderRow: function(rowdata) {
-    return <ContactCell contact={rowdata} setContact={this.props.setContact}/>;
+    return <ContactCell contact={rowdata} setContact={this.setContact}/>;
   },
 
   renderSectionHeader: function(sectionData) {

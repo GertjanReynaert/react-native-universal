@@ -6,10 +6,17 @@ var {
   StyleSheet
 } = React;
 var ContactList = require('../ContactList');
+var ContactDetail = require('../ContactDetail');
 
 var IphoneLayout = React.createClass({
-  selectContact: function(contact) {
-    debugger;
+  selectContact: function(contact, navigator) {
+    navigator.push({
+      title: contact.fullName,
+      component: ContactDetail,
+      passProps: {
+        contact: contact
+      }
+    });
   },
 
   render: function() {

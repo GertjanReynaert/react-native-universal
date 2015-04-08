@@ -63,7 +63,7 @@ var styles = StyleSheet.create({
     width: 60,
     height: 60,
     borderRadius: 30,
-    marginRight: 10
+    margin: 10
   },
   heroTextBox: {
     flexDirection: "column"
