@@ -41,7 +41,8 @@ var styles = StyleSheet.create({
     flexDirection: "row",
   },
   master: {
-    width: MASTER_WIDTH
+    width: MASTER_WIDTH,
+    paddingTop: 30
   },
   detail: {
     width: DEVICE_WIDTH - MASTER_WIDTH,

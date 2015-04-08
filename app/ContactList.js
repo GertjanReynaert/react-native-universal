@@ -63,13 +63,7 @@ var ContactList = React.createClass({
   },
 
   render: function() {
-    return <ListView style={styles.listview} dataSource={this.state.dataSource} renderRow={this.renderRow} renderSectionHeader={this.renderSectionHeader}/>;
-  }
-});
-
-var styles = StyleSheet.create({
-  listview: {
-    paddingTop: 30,
+    return <ListView dataSource={this.state.dataSource} renderRow={this.renderRow} renderSectionHeader={this.renderSectionHeader}/>;
   }
 });
 
