@@ -3,6 +3,7 @@
 *.swo
 *.swp
 *.rdb
+*.xcodeproj
 /.env
 /log/*
 /tags
