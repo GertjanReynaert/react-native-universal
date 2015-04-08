@@ -1,8 +1,8 @@
 'use strict';
 
 var React = require('react-native');
-var ContactList = require('./ContactList');
-var ContactDetail = require('./ContactDetail');
+var ContactList = require('../ContactList');
+var ContactDetail = require('../ContactDetail');
 var {
   StyleSheet,
   View
