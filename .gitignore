@@ -3,6 +3,7 @@
 *.swo
 *.swp
 *.rdb
+*.xcuserstate
 /.env
 /log/*
 /tags
