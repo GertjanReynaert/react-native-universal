@@ -1,20 +1,16 @@
 'use strict';
 
 var React = require('react-native');
-var Contact = require('./models/contact');
-var MasterDetail = require('./MasterDetail');
+var ContactFactory = require('./app/factories/contact_factory');
+var MasterDetail = require('./app/MasterDetail');
 var {
-  AppRegistry,
+  AppRegistry
 } = React;
 
 var reactNativeTest = React.createClass({
   getInitialState: function() {
-    var contacts = [];
-    for(var i = 0; i < 100; i++) {
-      contacts.push(new Contact());
-    }
-
-    return { contacts: contacts };
+    var factory = new ContactFactory();
+    return { contacts: factory.createList(100) };
   },
 
   render: function() {

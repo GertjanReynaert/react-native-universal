@@ -44,7 +44,7 @@ var ContactDetail = React.createClass({
         </View>
         <View style={styles.item}>
           <Text style={styles.label}>Birthday</Text>
-          <Text>{ this.props.contact.birthday }</Text>
+          <Text>{ this.props.contact.displayBirthday }</Text>
         </View>
       </ScrollView>
     );
