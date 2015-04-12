@@ -54,8 +54,12 @@ var ContactList = React.createClass({
     };
   },
 
+  setContact: function(contact) {
+    this.props.setContact(contact, this.props.navigator);
+  },
+
   renderRow: function(rowdata) {
-    return <ContactCell contact={rowdata} setContact={this.props.setContact}/>;
+    return <ContactCell contact={rowdata} setContact={this.setContact}/>;
   },
 
   renderSectionHeader: function(sectionData) {
@@ -63,13 +67,7 @@ var ContactList = React.createClass({
   },
 
   render: function() {
-    return <ListView style={styles.listview} dataSource={this.state.dataSource} renderRow={this.renderRow} renderSectionHeader={this.renderSectionHeader}/>;
-  }
-});
-
-var styles = StyleSheet.create({
-  listview: {
-    paddingTop: 30,
+    return <ListView dataSource={this.state.dataSource} renderRow={this.renderRow} renderSectionHeader={this.renderSectionHeader}/>;
   }
 });
 

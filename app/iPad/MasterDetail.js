@@ -1,8 +1,8 @@
 'use strict';
 
 var React = require('react-native');
-var ContactList = require('./ContactList');
-var ContactDetail = require('./ContactDetail');
+var ContactList = require('../ContactList');
+var ContactDetail = require('../ContactDetail');
 var {
   StyleSheet,
   View
@@ -41,7 +41,8 @@ var styles = StyleSheet.create({
     flexDirection: "row",
   },
   master: {
-    width: MASTER_WIDTH
+    width: MASTER_WIDTH,
+    paddingTop: 30
   },
   detail: {
     width: DEVICE_WIDTH - MASTER_WIDTH,
