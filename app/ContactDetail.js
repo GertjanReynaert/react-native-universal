@@ -53,7 +53,8 @@ var ContactDetail = React.createClass({
 
 var styles = StyleSheet.create({
   scrollview: {
-    height: 740
+    height: 740,
+    backgroundColor: "#FFFFFF"
   },
   hero: {
     flexDirection: "row",

@@ -46,7 +46,6 @@ var styles = StyleSheet.create({
   },
   detail: {
     width: DEVICE_WIDTH - MASTER_WIDTH,
-    backgroundColor: "#FFFFFF",
     padding: 20
   }
 });
