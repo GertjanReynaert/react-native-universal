@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>9047A97D-14E5-483D-9EED-A785F0210698</string>
 	<key>IDESourceControlProjectName</key>
-	<string>reactNativeTest</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>CB84A16F42D2697CE58DB2DEA2D2CD5F50603F06</key>
 		<string>https://github.com/GertjanReynaert/react-native-universal.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>reactNativeTest.xcodeproj</string>
+	<string>reactNativeTest.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>CB84A16F42D2697CE58DB2DEA2D2CD5F50603F06</key>

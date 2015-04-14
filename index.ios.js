@@ -1,7 +1,7 @@
 'use strict';
 
 var React = require('react-native');
-var Device = require('./app/Device');
+var Device = require('react-native-device');
 var ContactFactory = require('./app/factories/contact_factory');
 var MasterDetail = require('./app/iPad/MasterDetail');
 var IphoneLayout = require('./app/iPhone/IphoneLayout');
