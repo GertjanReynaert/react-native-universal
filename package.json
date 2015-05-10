@@ -6,8 +6,8 @@
     "start": "node_modules/react-native/packager/packager.sh"
   },
   "dependencies": {
-    "react-native": "^0.3.1",
     "faker": "^2.1.2",
-    "react-native-device": "^0.1.0"
+    "react-native": "^0.4.2",
+    "react-native-device": "git://github.com/GertjanReynaert/react-native-device.git"
   }
 }
