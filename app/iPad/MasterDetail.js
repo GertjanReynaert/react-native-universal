@@ -34,7 +34,6 @@ var MasterDetail = React.createClass({
   }
 });
 
-var DEVICE_WIDTH = 1024;
 var MASTER_WIDTH = 350;
 var styles = StyleSheet.create({
   screen: {
@@ -45,7 +44,7 @@ var styles = StyleSheet.create({
     paddingTop: 30
   },
   detail: {
-    width: DEVICE_WIDTH - MASTER_WIDTH,
+    flex: 1,
     padding: 20
   }
 });
