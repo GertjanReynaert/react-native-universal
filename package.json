@@ -6,8 +6,8 @@
     "start": "node_modules/react-native/packager/packager.sh"
   },
   "dependencies": {
-    "faker": "^2.1.2",
-    "react-native": "^0.4.2",
-    "react-native-device": "^0.2.0"
+    "faker": "^3.0.0",
+    "react-native": "^0.7.1",
+    "react-native-device": "^0.3.0"
   }
 }
