@@ -8,6 +8,6 @@
   "dependencies": {
     "faker": "^3.0.0",
     "react-native": "^0.7.1",
-    "react-native-device": "git://github.com/gertjanreynaert/react-native-device#gr-fix-rn-dependency"
+    "react-native-device": "^0.3.0"
   }
 }
