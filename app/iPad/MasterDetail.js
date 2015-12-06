@@ -37,6 +37,7 @@ var MasterDetail = React.createClass({
 var MASTER_WIDTH = 350;
 var styles = StyleSheet.create({
   screen: {
+    flex: 1,
     flexDirection: "row",
   },
   master: {
